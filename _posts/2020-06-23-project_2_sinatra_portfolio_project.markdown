@@ -1,7 +1,7 @@
 ---
 layout: post
 title:      "Project #2: Sinatra Portfolio Project."
-date:       2020-06-23 04:30:34 +0000
+date:       2020-06-23 00:30:35 -0400
 permalink:  project_2_sinatra_portfolio_project
 ---
 
@@ -10,7 +10,7 @@ So before I dive into the technical aspects that I have struggled with during th
 
 As with the first project, I took to YouTube to see what previous/current Flatiron students have made to get an idea of what I was getting into. After reading the project requirements, I decided to choose something I felt passionate about just like with my first project. I chose to create a web app, called "Gearhead Community", that would allow a user to showcase their cars and the parts they have added to those cars. I decided to use the Corneal gem, which helped create the main filetree needed for the entire project. I was able to quickly create my models, migrations and views without much trouble. 
 
-The first thing that I struggled with was Associations. I understood the basic concept of `has_many` and `belongs_to` and knew that my Car Model would have `'has_many :parts` and my Part Model would have `belongs_to :car`, but I wasn't too sure on the User Model and if it would just have only `has _many :cars` or also have `has many :parts, through: :cars`. I ended up adding the latter and also created a join table called car_part to have the foreign keys of both the Car model and Part model.
+The first thing that I struggled with was Associations. I understood the basic concept of `has_many` and `belongs_to` and knew that my Car Model would have `belongs_to :user` and my User Model would have `has_many :cars`. I wanted to implement a join table that would add a Part Model, however I ended up just adding another column to my Car Model to have the user input what parts they had for each car.
 
 The second thing that I struggled with was implementing the create/edit functionality. At first I was struggling with a user creating/editing empty form fields, however I ended up using an ActiveRecord validation to ensure that each form field was present and also not an empty string.
 
